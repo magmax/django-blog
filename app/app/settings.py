@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'sampledatahelper',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -84,4 +85,9 @@ STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = [
     os.path.join(BASE_DIR, 'templates'),
+]
+
+SAMPLEDATAHELPER_MODELS  = [
+    { 'model': 'blog.Post', 'number': 100, },
+    { 'model': 'blog.Tag', 'number': 5, },
 ]
