@@ -91,3 +91,10 @@ SAMPLEDATAHELPER_MODELS  = [
     { 'model': 'blog.Post', 'number': 100, },
     { 'model': 'blog.Tag', 'number': 5, },
 ]
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'blog.context_processors.tags',
+)
+
+USE_CDN = False
