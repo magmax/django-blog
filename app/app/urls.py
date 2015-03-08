@@ -9,5 +9,6 @@ from blog import views
 urlpatterns = patterns('',
     url(r'^$', views.PostListView.as_view(), name='home'),
     url(r'^post/(?P<pk>\d+)$', views.PostDetailView.as_view(), name='post_detail'),
+    url(r'^tag/(?P<pk>\d+)$', views.TagDetailView.as_view(), name='tag_detail'),
     url(r'^admin/', include(admin.site.urls)),
 )

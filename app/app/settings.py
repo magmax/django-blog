@@ -88,8 +88,21 @@ TEMPLATE_DIRS = [
 ]
 
 SAMPLEDATAHELPER_MODELS  = [
-    { 'model': 'blog.Post', 'number': 100, },
-    { 'model': 'blog.Tag', 'number': 5, },
+    {
+        'model': 'blog.Post',
+        'number': 100,
+        'fields_overwrite': [
+            ('teaser', lambda _, sd: sd.short_sentence()),
+            ('body', lambda _, sd: sd.paragraphs()),
+        ],
+    },
+    {
+        'model': 'blog.Tag',
+        'number': 5,
+        'fields_overwrite': [
+            ('name', lambda _, sd: sd.word()),
+        ],
+    },
 ]
 
 TEMPLATE_CONTEXT_PROCESSORS = (

@@ -11,3 +11,7 @@ class PostListView(ListView):
 
 class PostDetailView(DetailView):
     model = models.Post
+
+
+class TagDetailView(DetailView):
+    model = models.Tag

@@ -6,7 +6,11 @@
   <li class="active">{{ post.title }}</li>
 </ol>
 
-<h1>{{ post.title }}</h1>
+<h1>
+  {{ post.title }}
+  <br />
+  <small><span class="glyphicon glyphicon-calendar"></span>{{ post.updated }}</small>
+</h1>
 
 <div>
   {{ post.teaser }}
@@ -15,7 +19,7 @@
 <hr />
 
 <div>
-  {{ post.body }}
+  {{ post.body | linebreaks }}
 </div>
 
 {% endblock %}
